@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>HeroBiz Bootstrap Template - Home 2</title>
+  <!-- Your original head content goes here unchanged -->
+</head>
+<body>
+  <!-- Your original header content goes here unchanged -->
+
+  <div class="form-container">
+    <h2>Your Solar Analysis</h2>
+    <form id="solarCalcForm">
+      <div class="form-group">
+        <label for="averageBill">Your average monthly electricity bill</label>
+        <input type="text" class="form-control" id="averageBill" placeholder="Average monthly electricity bill in RS">
+      </div>
+      <div class="form-group">
+        <label for="consumerCategory">Please Select Your Consumer Category:</label>
+        <select class="form-control" id="consumerCategory">
+          <option value="RESIDENTIAL">RESIDENTIAL</option>
+          <option value="COMMERCIAL">COMMERCIAL</option>
+          <option value="INDUSTRIAL">INDUSTRIAL</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <button type="button" id="calculateButton" class="btn btn-primary">Calculate</button>
+      </div>
+    </form>
+    <div id="results" style="margin-top: 20px;"></div>
+  </div>
+
+  <!-- Your original footer and other content goes here unchanged -->
+
+  <!-- Template Main JS File and other scripts remain unchanged -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const calculateButton = document.getElementById('calculateButton');
+        const resultsDiv = document.getElementById('results');
+    
+        calculateButton.addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent form submission
+            
+            const averageBillValue = document.getElementById('averageBill').value;
+            const averageBill = parseFloat(averageBillValue);
+            const consumerCategory = document.getElementById('consumerCategory').value;
+            let ratePerKWh;
+    
+            if (consumerCategory === "RESIDENTIAL") {
+                if (averageBill <= 6000 * 18) {
+                    ratePerKWh = 18; // For up to 6,000 kWh
+                } else {
+                    ratePerKWh = 30; // Above 6,000 kWh
+                }
+            }
+            // Logic for COMMERCIAL and INDUSTRIAL categories would go here
+            
+            const kwConsumption = averageBill / ratePerKWh;
+            resultsDiv.innerHTML = `Your estimated monthly KW consumption is: ${kwConsumption.toFixed(2)} KW`;
+        });
+    });
+  </script>
+</body>
+</html>

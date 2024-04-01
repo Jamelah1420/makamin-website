@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <style>
+        .icon {
+          width: 40px; /* You can adjust the size as needed */
+          height: auto;
+          margin-right: 5px; /* Add some space between the icon and the text */
+        }
+
+      </style>
+       <style>
+        .bill-amount-display {
+            text-align: center; /* Centers the text inside the div */
+            margin-top: 20px; /* Adds space between the canvas and the text */
+        }
+    </style>
+         <style>
+            .chart-container {
+                float: right;
+                margin-right: 20px; /* Adjust the value as needed */
+padding-left: 30px;
+
+            }
+
+            </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="stylesv2.css">
+</head>
+<body>
+    
+    <header class="header">
+        <h1 class="title">Makamin</h1>
+    </header>
+    <div class="container">
+       <div class="form-container py-2">
+            <h2 class="form-title">Transaction</h2>
+            <form id="expense-form" class="expense-form">
+                <input type="number" id="bill-amount" placeholder="Amount" required>
+                <button type="submit" class="submit-btn">Calculate Bill with Solar Power</button>
+            </form>
+      
+        </div>    <!-- Bar Chart Container -->
+      
+     
+            
+        
+        <div class="chart-container">
+            <div class="some-summing-up">
+                <h2>Solar Energy Prediction :
+                </h2> </div>
+            <div id="enve">
+                <p id="currentBillAmount">Avg Energy Consumption / Monthly: </p>
+
+                <p id="currentBillAmountinkw">Solar Energy Preduction / Monthly: </p>
+
+
+            </div>
+        </div>
+           
+ 
+ 
+        <div class="chart-container">
+            <canvas id="savingsChart" width="200" height="200"></canvas>
+        </div>
+        <div class="chart-container  ">
+            <canvas id="expenseChart" width="400" height="200"></canvas>
+        </div>  
+        <div class="chart-container ">
+            <div class="some-summing-up ">
+                <h2>Environmental Contrbution:</h2> </div>
+          
+                <div id="enve">
+                    <p>
+                        <img src="assets/img/no-car.png" alt="Car Icon" class="icon">
+                        Equivalent number of cars off the road: <span id="carsOffRoadText"></span>
+                    </p>
+                    <p>
+                        <img src="assets/img/isolated-tree-white-background_1308-26130.avif" alt="Tree Icon" class="icon">
+                        Number of trees saved: <span id="treesSavedText"></span>
+                    </p>
+           
+                </div>
+                
+        </div>
+ 
+        <div class="chart">
+            <canvas id="over" width="00" height="0"></canvas>
+        </div>
+        
+        <!-- Additional boxes for displaying average monthly energy consumption and solar energy prediction -->
+ 
+        <!-- Form Container -->
+     
+ 
+
+ 
+    
+    </div>
+
+    <script src="appv2.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+          // Your JavaScript code that updates the div content goes here
+        });
+      </script>
+      
+</body>
+</html>

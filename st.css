@@ -109,7 +109,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   
   /*-- end reset --*/
   body {
-    background: #FF7426;
+    background: gray;
     /* fallback for old browsers */
    
     background-size: cover;
@@ -223,7 +223,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     -o-transition: .5s all;
     -ms-transition: .5s all;
     transition: .5s all;
-    background: #8DC26F;
+    background: gray;
   }
   
   .agileits-top p {

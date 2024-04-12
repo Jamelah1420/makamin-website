@@ -118,4 +118,6 @@ document.getElementById('currentBillAmountinkw').textContent =`Solar Energy Pred
     });
 });
 
+
+
  

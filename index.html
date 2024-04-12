@@ -16,6 +16,236 @@
 </style>
 
   </style>
+  
+  <style>
+    /* Resetting some default styles */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+  }
+
+  /* Navigation Menu */
+  .nav-menu {
+  display: flex;
+  align-items: center; /* Align items vertically */
+  justify-content: space-between; /* Positions the logo to the left and menu-items to the right */
+  background-color: #333;
+  padding: 0 20px; /* Adds padding on the sides for spacing */
+}
+
+.nav-menu .nav-logo {
+  height: 50px; /* Adjust the logo size as needed */
+  width: auto;
+}
+
+.menu-items {
+  display: flex;
+  justify-content: center; /* Center menu items */
+  flex-grow: 1; /* Allows the menu items container to fill available space */
+}
+
+.menu-items a {
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 20px 50px; /*the menu width & spaces between menu items*/
+  text-decoration: none;
+  font-size: 17px;
+}
+
+
+  .nav-menu a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+
+  .menu-items a, .login-button a {
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 20px 50px; /*the menu width & spaces between menu items*/
+  text-decoration: none;
+  font-size: 17px;
+  border-radius: 5px; /* Rounded corners */
+}
+
+.login-button {
+  /* Styles for the login button */
+  background-color: #e39607; /* Example: a blue background */
+  border-radius: 5px; /* Rounded corners */
+}
+
+.login-button a {
+  padding: 10px 15px; /* Smaller padding for the login button */
+  color: #fff; /* White text color */
+}
+
+  /* Video background section */
+  #video-background {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the video covers the container area */
+  z-index: -100;
+}
+
+
+  .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 100;
+  }
+
+  .welcome-message {
+    font-size: 36px;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+
+  /* Why Makamin Section (Services Description) */
+  .why-makamin {
+  padding: 50px 40px; /* First Value is the space above */
+}
+
+.why-makamin-header {
+  font-size: 24px;
+  text-align: left;
+  padding-bottom: 15px;
+  border-left: 4px solid #d67105; /* Solid line to the left of the header */
+  padding-left: 15px;
+  padding-top: 15px;
+}
+
+.services-description {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px; /* Adjust the gap as needed */
+  padding-top: 50px;
+}
+
+.services-header {
+  font-size: 24px;
+  text-align: left; /* Aligns the header to the left */
+  padding-bottom: 10px; /* Adds some space below the header */
+  border-left: 4px solid #d67105; /* Solid line to the left of the header */
+  padding-left: 15px;
+  padding-top: 15px;
+  margin-top: 0; /* Adjust as needed to space above the header */
+  margin-bottom: 20px; /* Adjust as needed for space between the header and the container */
+  margin-left: 40px;
+}
+
+.service {
+  background-color: #f5f5f5; /* Light grey background */
+  border-radius: 10px; /* Rounded corners for the service boxes */
+  padding: 20px;
+  flex-basis: calc(33.333% - 20px); /* Adjust the width to account for the gap */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: adds some shadow for depth */
+}
+
+.service h3 {
+  color: #333;
+  margin-bottom: 70px; /* Hight of the description container */
+}
+
+.service p {
+  color: #666;
+  line-height: 1.6;
+}
+
+
+  /* Services section */
+  .services-container {
+    display: flex;
+    gap: 30px; /* This is the space between the items */
+    padding: 40px;
+    margin: 10px auto; /* Adjusted to center the container and maintain space top and bottom */
+}
+
+
+  .service {
+    flex: 1;
+    margin: 0 10px;
+    padding: 40px;
+    background-color: #FFDAB9; /*This color is contected to both Description of services and services*/
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .service:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: #FFA500;
+  }
+
+  .service h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .service p {
+    font-size: 16px;
+    color: #666;
+  }
+
+  .vision-mission {
+  display: flex;
+  justify-content: space-around;
+  margin: 50px; /* Space above */
+}
+
+.vision-mission div {
+  flex-basis: 45%; /* Adjust the width as needed */
+  background: #b2e285; /* This is a light grey background, replace with your image if needed */
+  border-radius: 15px; /* Rounded corners */
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: adds some shadow for depth */
+}
+
+.vision-mission h2 {
+  color: #333; /* Dark grey color for the heading */
+  margin-bottom: 10px;
+}
+
+.vision-mission p {
+  color: #666; /* Lighter grey color for the paragraph */
+  line-height: 1.6; /* Adjust line height for better readability */
+}
+
+
+  /* Footer section */
+  footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+  }
+</style>
+
+
+  
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
@@ -93,16 +323,17 @@
     </div>
   </header><!-- End Header -->
 
-  <section id="hero-animated" class="hero-animated d-flex align-items-center">
-    <div class="container d-flex flex-column justify-content-center align-items-center text-center position-relative" data-aos="zoom-out">
-      <img src="assets/img/hero-carousel/Asset 5.png" class="img-fluid animated">
-      <h2>Estimates the <span>energy</span> production and <span>energy</span> of energy </h2>
-      <p>Et voluptate esse accusantium accusamus natus reiciendis quidem voluptates similique aut.</p>
-      <div class="d-flex">
-        <a href="#about" class="btn-get-started scrollto">Get Started</a>
-      </div>
+  <section id="video-background">
+    <video autoplay muted loop>
+      <source src="Makamin Background - Riyadh Electricity View - Edited.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="content">
+      <h1 class="welcome-message">Welcome to Makamin</h1>
+      <h2 class="welcome-message">Your Guide to a Better Future!</h2>
     </div>
   </section>
+  
 
   <main id="main">
 
@@ -276,169 +507,7 @@
       </div>
     </section><!-- End About Section -->
 
-    <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact">
-      <div class="container">
-
-        <div class="section-header">
-          <h2>Contact Us</h2>
-          <p>Ea vitae aspernatur deserunt voluptatem impedit deserunt magnam occaecati dssumenda quas ut ad dolores adipisci aliquam.</p>
-        </div>
-
-      </div>
-
-      <div class="container">
-
-        <div class="row gy-5 gx-lg-5">
-
-          <div class="col-lg-4">
-
-            <div class="info">
-              <h3>Get in touch</h3>
-              <p>Et id eius voluptates atque nihil voluptatem enim in tempore minima sit ad mollitia commodi minus.</p>
-
-              <div class="info-item d-flex">
-                <i class="bi bi-geo-alt flex-shrink-0"></i>
-                <div>
-                  <h4>Location:</h4>
-                  <p>A108 Adam Street, New York, NY 535022</p>
-                </div>
-              </div><!-- End Info Item -->
-
-              <div class="info-item d-flex">
-                <i class="bi bi-envelope flex-shrink-0"></i>
-                <div>
-                  <h4>Email:</h4>
-                  <p>info@example.com</p>
-                </div>
-              </div><!-- End Info Item -->
-
-              <div class="info-item d-flex">
-                <i class="bi bi-phone flex-shrink-0"></i>
-                <div>
-                  <h4>Call:</h4>
-                  <p>+1 5589 55488 55</p>
-                </div>
-              </div><!-- End Info Item -->
-
-            </div>
-
-          </div>
-
-          <div class="col-lg-8">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-              <div class="row">
-                <div class="col-md-6 form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
-                </div>
-                <div class="col-md-6 form-group mt-3 mt-md-0">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
-                </div>
-              </div>
-              <div class="form-group mt-3">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
-              </div>
-              <div class="form-group mt-3">
-                <textarea class="form-control" name="message" placeholder="Message" required></textarea>
-              </div>
-              <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
-            </form>
-          </div><!-- End Contact Form -->
-
-        </div>
-
-      </div>
-    </section><!-- End Contact Section -->
-
   </main><!-- End #main -->
-
-  <!-- ======= Footer ======= -->
-  <footer id="footer" class="footer">
-
-    <div class="footer-content">
-      <div class="container">
-        <div class="row">
-
-          <div class="col-lg-3 col-md-6">
-            <div class="footer-info">
-              <h3>HeroBiz</h3>
-              <p>
-                A108 Adam Street <br>
-                NY 535022, USA<br><br>
-                <strong>Phone:</strong> +1 5589 55488 55<br>
-                <strong>Email:</strong> info@example.com<br>
-              </p>
-            </div>
-          </div>
-
-          <div class="col-lg-2 col-md-6 footer-links">
-            <h4>Useful Links</h4>
-            <ul>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">About us</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Services</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Terms of service</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Privacy policy</a></li>
-            </ul>
-          </div>
-
-          <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Our Services</h4>
-            <ul>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Web Design</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Web Development</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Product Management</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Marketing</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Graphic Design</a></li>
-            </ul>
-          </div>
-
-          <div class="col-lg-4 col-md-6 footer-newsletter">
-            <h4>Our Newsletter</h4>
-            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
-            <form action="" method="post">
-              <input type="email" name="email"><input type="submit" value="Subscribe">
-            </form>
-
-          </div>
-
-        </div>
-      </div>
-    </div>
-
-    <div class="footer-legal text-center">
-      <div class="container d-flex flex-column flex-lg-row justify-content-center justify-content-lg-between align-items-center">
-
-        <div class="d-flex flex-column align-items-center align-items-lg-start">
-          <div class="copyright">
-            &copy; Copyright <strong><span>HeroBiz</span></strong>. All Rights Reserved
-          </div>
-          <div class="credits">
-            <!-- All the links in the footer should remain intact. -->
-            <!-- You can delete the links only if you purchased the pro version. -->
-            <!-- Licensing information: https://bootstrapmade.com/license/ -->
-            <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/herobiz-bootstrap-business-template/ -->
-            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-          </div>
-        </div>
-
-        <div class="social-links order-first order-lg-last mb-3 mb-lg-0">
-          <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-          <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-          <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-          <a href="#" class="google-plus"><i class="bi bi-skype"></i></a>
-          <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
-        </div>
-
-      </div>
-    </div>
-
-  </footer><!-- End Footer -->
 
   <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 

@@ -94,3 +94,202 @@ body {
     font-size: 14px;
     color: #666;
 }
+.chart-container {
+    max-width: 650px; /* Adjust as needed */
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  body, h1, h2, h3, p, a {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .site-header {
+    background-color: gray;
+    background-size: fullscreen;
+    color: white;
+    text-align:center;  
+    padding: 40px 20px; /* Adjust the padding as needed */
+  }
+  
+  .header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px; /* Adjust the padding as needed */
+  }
+  
+  .logo {
+    font-size: 30px; /* Adjust the size as needed */
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+  }
+  
+  .main-nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px; /* Adjust the spacing as needed */
+    font-weight: bold;
+  }
+  
+  .login-actions a {
+    background-color: orange; /* Use your brand color */
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px; /* Adjust the padding as needed */
+    border-radius: 20px; /* Adjust the border radius as needed */
+    margin-left: 10px; /* Adjust the margin as needed */
+  }
+  
+  .signup {
+    background-color: white;
+    color: orange;
+  }
+  
+  .header-content h1 {
+    font-size: 40px; /* Adjust the size as needed */
+    margin-top: 20px; /* Adjust the margin as needed */
+  }
+  
+  .header-content p {
+    font-size: 20px; /* Adjust the size as needed */
+    margin-top: 10px; /* Adjust the margin as needed */
+  }
+  
+  /* Responsive Nav - you might want to convert the nav to a hamburger menu on mobile */
+  @media (max-width: 768px) {
+    .main-nav {
+      display: none; /* Hide nav on mobile, show hamburger icon instead */
+    }
+  
+    .header-content h1 {
+      font-size: 24px;
+    }
+  
+    .header-content p {
+      font-size: 16px;
+    }
+  }
+  
+  /* Add more responsive CSS as needed */
+    /* Existing CSS styles */
+/* ... */
+
+/* Responsive styling for the chart containers */
+.chart-container {
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 20px;
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    margin-bottom: 20px;
+}
+
+/* Flex container for charts */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .chart-container {
+        width: calc(100% - 20px); /* Take full width minus the margin */
+    }
+}
+
+@media (max-width: 576px) {
+    /* Further adjustments for smaller screens */
+    .chart-container {
+        width: calc(100% - 80px); /* Account for padding */
+    }
+}
+
+/* Add additional custom responsive styles as needed */
+/* Style for the input element itself */
+#bill-amount {
+    border: 1px solid black; /* Adds a solid black border to the input */
+    /* Other styling properties such as padding, font-size, etc. */
+}
+
+/* Style for the placeholder text */
+#bill-amount::placeholder {
+    color: grey; /* Changes the placeholder text color */
+    /* Other styling for placeholder text */
+}
+
+/* Style for the input when the placeholder is shown */
+#bill-amount:placeholder-shown {
+    /* Styles when the placeholder is shown can be placed here */
+    /* This does not allow for border styling around placeholder text */
+}
+.chart-container {
+    /* ... your existing styles ... */
+    text-align: left; /* Align text to the left */
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    align-items: flex-start; /* Align items to the start of the container */
+    padding: 20px;
+}
+
+.some-summing-up h2 {
+    font-size: 1.5em; /* Default font size */
+    margin-bottom: 0.5em; /* Space below the header */
+}
+
+/* Style for individual items with icons and text */
+#enve p {
+    display: flex;
+    align-items: center; /* Aligns the text with the icon */
+    margin-bottom: 10px; /* Space between items */
+}
+
+.icon {
+    width: 30px; /* Smaller size for icons */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 10px; /* Space between the icon and text */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .some-summing-up h2 {
+        font-size: 1.2em; /* Smaller font size on tablets */
+    }
+
+    #enve p {
+        font-size: 0.9em; /* Smaller font size for text */
+    }
+}
+
+@media (max-width: 576px) {
+    .some-summing-up h2 {
+        font-size: 1em; /* Even smaller font size on mobile phones */
+    }
+
+    #enve p {
+        font-size: 0.8em; /* Smaller font size for text */
+        flex-wrap: wrap; /* Allow items to wrap to next line if needed */
+    }
+
+    .icon {
+        width: 25px; /* Even smaller icons on mobile phones */
+    }
+}
+ 
+ 

@@ -27,27 +27,229 @@ padding-left: 30px;
             }
 
             </style>
+            
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Assuming you've already included the Chart.js library in your HTML
+        // JavaScript to initialize charts, which seems to be set up correctly
+document.addEventListener('DOMContentLoaded', function() {
+    // Your chart initialization code
+});
+
+        document.addEventListener('DOMContentLoaded', function() {
+          var ctx = document.getElementById('ycostSavingChart').getContext('2d');
+          var costSavingChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+              labels: ['Year 1', 'Year 2', 'Year 3', 'Year 4', 'Year 1', 'Year 1', 'Year 1', 'Year 1', 'Year 1', 'Year 1', 'Year 1', 'Year 1'],
+              datasets: [{
+                label: 'Cost Saving Estimation for 1 year',
+                data: [88.9, 567.8, 888.7, 88.6, 1264.5, 1517.4, 1770.3, 879.2, 2276.1, 2529, 2781.9, 3034.8],
+                backgroundColor: [
+                  'rgba(255, 159, 64, 0.2)',
+                  'rgba(255, 159, 64, 0.2)',
+                  'rgba(255, 159, 64, 0.2)',
+                  'rgba(255, 159, 64, 0.2)',
+                  'rgba(255, 159, 64, 0.2)',
+                  'rgba(255, 159, 64, 0.2)',
+                  'rgba(255, 159, 64, 0.2)',
+                  'rgba(255, 159, 64, 0.2)',
+                  'rgba(255, 159, 64, 0.2)',
+                  'rgba(255, 99, 132, 0.2)',
+                  'rgba(255, 99, 132, 0.2)',
+                  'rgba(255, 99, 132, 0.2)'
+                ],
+                borderColor: [
+                  'rgba(255, 159, 64, 1)',
+                  'rgba(255, 159, 64, 1)',
+                  'rgba(255, 159, 64, 1)',
+                  'rgba(255, 159, 64, 1)',
+                  'rgba(255, 159, 64, 1)',
+                  'rgba(255, 159, 64, 1)',
+                  'rgba(255, 159, 64, 1)',
+                  'rgba(255, 159, 64, 1)',
+                  'rgba(255, 159, 64, 1)',
+                  'rgba(255, 99, 132, 1)',
+                  'rgba(255, 99, 132, 1)',
+                  'rgba(255, 99, 132, 1)'
+                ],
+                borderWidth: 1
+              }]
+            },
+            options: {
+              scales: {
+                y: {
+                  beginAtZero: true,
+                  ticks: {
+                    callback: function(value, index, values) {
+                      return value + ' SR';
+                    }
+                  }
+                }
+              },
+              plugins: {
+                legend: {
+                  display: false
+                },
+                tooltip: {
+                  callbacks: {
+                    label: function(context) {
+                      var label = context.dataset.label || '';
+                      if (label) {
+                        label += ': ';
+                      }
+                      label += Math.round(context.parsed.y) + ' SR';
+                      return label;
+                    }
+                  }
+                }
+              }
+            }
+          });
+        });
+
+
+        document.addEventListener('DOMContentLoaded', function() {
+          var ctx = document.getElementById('costSavingChart').getContext('2d');
+          var costSavingChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+              labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+              datasets: [{
+                label: 'Cost Saving Estimation for 1 year',
+                data: [99.9, 989.8, 758.7, 1011.6, 1264.5, 1517.4, 1770.3, 2023.2, 2276.1, 2529, 2781.9, 3034.8],
+                backgroundColor: [
+                  'rgba(255, 159, 64, 0.2)',
+                  'rgba(255, 159, 64, 0.2)',
+                  'rgba(255, 159, 64, 0.2)',
+                  'rgba(255, 159, 64, 0.2)',
+                  'rgba(255, 159, 64, 0.2)',
+                  'rgba(255, 159, 64, 0.2)',
+                  'rgba(255, 159, 64, 0.2)',
+                  'rgba(255, 159, 64, 0.2)',
+                  'rgba(255, 159, 64, 0.2)',
+                  'rgba(255, 99, 132, 0.2)',
+                  'rgba(255, 99, 132, 0.2)',
+                  'rgba(255, 99, 132, 0.2)'
+                ],
+                borderColor: [
+                  'rgba(255, 159, 64, 1)',
+                  'rgba(255, 159, 64, 1)',
+                  'rgba(255, 159, 64, 1)',
+                  'rgba(255, 159, 64, 1)',
+                  'rgba(255, 159, 64, 1)',
+                  'rgba(255, 159, 64, 1)',
+                  'rgba(255, 159, 64, 1)',
+                  'rgba(255, 159, 64, 1)',
+                  'rgba(255, 159, 64, 1)',
+                  'rgba(255, 99, 132, 1)',
+                  'rgba(255, 99, 132, 1)',
+                  'rgba(255, 99, 132, 1)'
+                ],
+                borderWidth: 1
+              }]
+            },
+            options: {
+              scales: {
+                y: {
+                  beginAtZero: true,
+                  ticks: {
+                    callback: function(value, index, values) {
+                      return value + ' SR';
+                    }
+                  }
+                }
+              },
+              plugins: {
+                legend: {
+                  display: false
+                },
+                tooltip: {
+                  callbacks: {
+                    label: function(context) {
+                      var label = context.dataset.label || '';
+                      if (label) {
+                        label += ': ';
+                      }
+                      label += Math.round(context.parsed.y) + ' SR';
+                      return label;
+                    }
+                  }
+                }
+              }
+            }
+          });
+        });
+        </script>
+        <script>
+            // Example code for a toggle menu, replace with actual IDs and classes
+            document.querySelector('.menu-toggle').addEventListener('click', function() {
+              document.querySelector('.main-nav').classList.toggle('active');
+            });
+            </script>
+            
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        
     <link rel="stylesheet" href="stylesv2.css">
 </head>
 <body>
-    
-    <header class="header">
-        <h1 class="title">Makamin</h1>
-    </header>
+    <header class="site-header">
+     
+        <div class="header-content">
+          <h1>Welcome to Cost-Saving Calculator</h1>
+          <p>Take the first step to financial freedom! Calculate your potential savings and embrace solar energy!</p>
+        </div>
+      </header>
+      <div class="form-container py-2">
+        <h2 class="form-title">Transaction</h2>
+        <form id="expense-form" class="expense-form">
+            <input type="number" id="bill-amount" placeholder="Enter Your Bill Amount" required>
+            <button type="submit" class="submit-btn">Calculate Bill with Solar Power</button>
+        </form>
+  
+    </div> 
     <div class="container">
-       <div class="form-container py-2">
-            <h2 class="form-title">Transaction</h2>
-            <form id="expense-form" class="expense-form">
-                <input type="number" id="bill-amount" placeholder="Amount" required>
-                <button type="submit" class="submit-btn">Calculate Bill with Solar Power</button>
-            </form>
-      
-        </div>    <!-- Bar Chart Container -->
+      <!-- Bar Chart Container -->
       
      
             
         
+  
+        
+
+        <div class="chart-container">
+            <canvas id="ycostSavingChart"></canvas>
+          </div>
+
+       
+        <div class="chart-container  ">
+            <canvas id="expenseChart" width="400" height="200"></canvas>
+        </div>  
+        <div class="chart-container">
+            <canvas id="savingsChart" width="200" height="200"></canvas>
+        </div>
+          
+        <div class="chart-container">
+            <canvas id="costSavingChart"></canvas>
+          </div>
+    
+        <div class="chart-container ">
+            <div class="some-summing-up ">
+                <h2>Environmental Contrbution:</h2> </div>
+          
+                <div id="enve">
+                    <p>
+                        <img src="assets/img/no-car.png" alt="Car Icon" class="icon">
+                         Number of cars off the road: <span id="carsOffRoadText"></span>
+                    </p>
+                    <p>
+                        <img src="assets/img/isolated-tree-white-background_1308-26130.avif" alt="Tree Icon" class="icon">
+                        Number of trees saved: <span id="treesSavedText"></span>
+                    </p>
+           
+                </div>
+                
+        </div>
         <div class="chart-container">
             <div class="some-summing-up">
                 <h2>Solar Energy Prediction :
@@ -61,32 +263,6 @@ padding-left: 30px;
             </div>
         </div>
            
- 
- 
-        <div class="chart-container">
-            <canvas id="savingsChart" width="200" height="200"></canvas>
-        </div>
-        <div class="chart-container  ">
-            <canvas id="expenseChart" width="400" height="200"></canvas>
-        </div>  
-        <div class="chart-container ">
-            <div class="some-summing-up ">
-                <h2>Environmental Contrbution:</h2> </div>
-          
-                <div id="enve">
-                    <p>
-                        <img src="assets/img/no-car.png" alt="Car Icon" class="icon">
-                        Equivalent number of cars off the road: <span id="carsOffRoadText"></span>
-                    </p>
-                    <p>
-                        <img src="assets/img/isolated-tree-white-background_1308-26130.avif" alt="Tree Icon" class="icon">
-                        Number of trees saved: <span id="treesSavedText"></span>
-                    </p>
-           
-                </div>
-                
-        </div>
- 
         <div class="chart">
             <canvas id="over" width="00" height="0"></canvas>
         </div>

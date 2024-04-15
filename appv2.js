@@ -112,12 +112,101 @@ document.getElementById('carsOffRoadText').textContent = `${CarsOffRoad.toFixed(
 document.getElementById('currentBillAmount').textContent =`Avg Energy Consumption / Monthly: ${ currentBillAmount.toFixed(2)} SAR`;
  
 
-document.getElementById('currentBillAmountinkw').textContent =`Solar Energy Preduction / Monthly: ${ solarInkw.toFixed(2)} SAR`;
+document.getElementById('currentBillAmountinkw').textContent =`Solar Energy Preduction / Monthly: ${ 300} SAR`;
 
 
     });
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    var ctx = document.getElementById('ycostSavingChart').getContext('2d');
+
+    // Initialize the chart with zeros
+    var costSavingChart = new Chart(ctx, {
+        type: 'bar',
+        
+        data: {
+            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+            datasets: [{
+                label: 'Cost Saving Estimation for 10 years',
+                data: new Array(10).fill(0), // Start with zeros
+                backgroundColor: 'rgba(255, 159, 64, 0.2)',
+                borderColor: 'rgba(255, 159, 64, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks: {
+                        callback: function(value) {
+                            return value + ' SR';
+                        }
+                    }
+                }
+            },
+            plugins: {
+                legend: {
+                    display: false
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            return context.dataset.label + ': ' + Math.round(context.parsed.y) + ' SR';
+                        }
+                    }
+                }
+            }
+        }
+    });
+
+    // Update the chart after the user submits the form
+    document.getElementById('expense-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        // Assuming solarInRsa is the savings amount per year
+        const solarInRsa = 300 * 0.18; // This should be calculated based on user input
+        const yearlyIncrement = solarInRsa;
+        var dataForTenYears = Array.from({ length: 10 }, (item, index) => yearlyIncrement * (index + 1));
+        
+        // Update chart data
+        costSavingChart.data.datasets[0].data = dataForTenYears;
+        costSavingChart.update();
+    });
 
 
+     const annualGeneration = solarInRsa * 12; // Multiply by 12 for the annual generation
+
+    // Update the chart with the new data
+    var dataForTenYears = Array.from({ length: 10 }, (_, index) => (index + 1) * annualGeneration);
+
+    costSavingChart.data.datasets[0].data = dataForTenYears;
+    costSavingChart.update();
+
+    // Update the 'estimatedGenerationLabel' element with the annual generation
+    var estimatedGenerationLabel = document.getElementById('estimatedGenerationLabel');
+    if(estimatedGenerationLabel) {
+        estimatedGenerationLabel.textContent = `Estimated 1st Year Generation: ${annualGeneration.toFixed(2)} kWh`;
+    }
+});
+
+
+
+
+document.getElementById('expense-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const billAmountElement = document.getElementById('bill-amount');
+    const billAmount = parseFloat(billAmountElement.value);
+    
+    if (isNaN(billAmount)) {
+        alert('Please enter a valid number for the bill amount.');
+        return;
+    }
  
+});
+
+function calculateSolarInRsa(billAmount) {
+    // Replace this with your actual calculation for solarInRsa
+    return billAmount * 0.18; // Example, assuming 0.18 is the multiplier for solarInRsa
+}

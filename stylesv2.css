@@ -292,4 +292,13 @@ body {
     }
 }
  
- 
+.chart-container {
+    display: flex; /* Use flexbox to lay out children */
+    align-items: center; /* Align vertically */
+    justify-content: space-between; /* Spacing between items */
+    padding-right: 30px; /* Adjust the value as needed */
+}
+
+.chart-container .chart-header {
+    margin-right: 20px; /* Space between the text and the chart */
+}

@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <style>
+    body {
+      background-color: #ffffff; /* Black background */
+    }
+    @media (min-width: 992px) { /* Adjusting for large screens, Bootstrap's LG breakpoint */
+    .custom-gap {
+      width: 100%; /* Ensure the spacer takes full width for smaller screens */
+      max-width: 553px; /* Maximum width of the spacer on larger screens */
+      flex: 0 0 553px; /* Flex shorthand to prevent growing, shrinking, and set base width */
+    }
+  }
+</style>
+
+  </style>
+  
+  <style>
+    /* Resetting some default styles */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+  }
+
+  /* Navigation Menu */
+  .nav-menu {
+  display: flex;
+  align-items: center; /* Align items vertically */
+  justify-content: space-between; /* Positions the logo to the left and menu-items to the right */
+  background-color: #333;
+  padding: 0 20px; /* Adds padding on the sides for spacing */
+}
+
+.nav-menu .nav-logo {
+  height: 50px; /* Adjust the logo size as needed */
+  width: auto;
+}
+
+.menu-items {
+  display: flex;
+  justify-content: center; /* Center menu items */
+  flex-grow: 1; /* Allows the menu items container to fill available space */
+}
+
+.menu-items a {
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 20px 50px; /*the menu width & spaces between menu items*/
+  text-decoration: none;
+  font-size: 17px;
+}
+
+
+  .nav-menu a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+
+  .menu-items a, .login-button a {
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 20px 50px; /*the menu width & spaces between menu items*/
+  text-decoration: none;
+  font-size: 17px;
+  border-radius: 5px; /* Rounded corners */
+}
+
+.login-button {
+  /* Styles for the login button */
+  background-color: #e39607; /* Example: a blue background */
+  border-radius: 5px; /* Rounded corners */
+}
+
+.login-button a {
+  padding: 10px 15px; /* Smaller padding for the login button */
+  color: #fff; /* White text color */
+}
+
+  /* Video background section */
+  #video-background {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the video covers the container area */
+  z-index: -100;
+}
+
+
+  .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 100;
+  }
+
+  .welcome-message {
+    font-size: 36px;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+
+  /* Why Makamin Section (Services Description) */
+  .why-makamin {
+  padding: 50px 40px; /* First Value is the space above */
+}
+
+.why-makamin-header {
+  font-size: 24px;
+  text-align: left;
+  padding-bottom: 15px;
+  border-left: 4px solid #d67105; /* Solid line to the left of the header */
+  padding-left: 15px;
+  padding-top: 15px;
+}
+
+.services-description {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px; /* Adjust the gap as needed */
+  padding-top: 50px;
+}
+
+.services-header {
+  font-size: 24px;
+  text-align: left; /* Aligns the header to the left */
+  padding-bottom: 10px; /* Adds some space below the header */
+  border-left: 4px solid #d67105; /* Solid line to the left of the header */
+  padding-left: 15px;
+  padding-top: 15px;
+  margin-top: 0; /* Adjust as needed to space above the header */
+  margin-bottom: 20px; /* Adjust as needed for space between the header and the container */
+  margin-left: 40px;
+}
+
+.service {
+  background-color: #f5f5f5; /* Light grey background */
+  border-radius: 10px; /* Rounded corners for the service boxes */
+  padding: 20px;
+  flex-basis: calc(33.333% - 20px); /* Adjust the width to account for the gap */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: adds some shadow for depth */
+}
+
+.service h3 {
+  color: #333;
+  margin-bottom: 70px; /* Hight of the description container */
+}
+
+.service p {
+  color: #666;
+  line-height: 1.6;
+}
+
+
+  /* Services section */
+  .services-container {
+    display: flex;
+    gap: 30px; /* This is the space between the items */
+    padding: 40px;
+    margin: 10px auto; /* Adjusted to center the container and maintain space top and bottom */
+}
+
+
+  .service {
+    flex: 1;
+    margin: 0 10px;
+    padding: 40px;
+    background-color: #FFDAB9; /*This color is contected to both Description of services and services*/
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .service:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: #FFA500;
+  }
+
+  .service h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .service p {
+    font-size: 16px;
+    color: #666;
+  }
+
+  .vision-mission {
+  display: flex;
+  justify-content: space-around;
+  margin: 50px; /* Space above */
+}
+
+.vision-mission div {
+  flex-basis: 45%; /* Adjust the width as needed */
+  background: #b2e285; /* This is a light grey background, replace with your image if needed */
+  border-radius: 15px; /* Rounded corners */
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: adds some shadow for depth */
+}
+
+.vision-mission h2 {
+  color: #333; /* Dark grey color for the heading */
+  margin-bottom: 10px;
+}
+
+.vision-mission p {
+  color: #666; /* Lighter grey color for the paragraph */
+  line-height: 1.6; /* Adjust line height for better readability */
+}
+
+
+  /* Footer section */
+  footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+  }
+</style>
+
+
+  
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Makamin</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Variables CSS Files. Uncomment your preferred color scheme -->
+  <link href="assets/css/variables.css" rel="stylesheet">
+  <!-- <link href="assets/css/variables-blue.css" rel="stylesheet"> -->
+  <!-- <link href="assets/css/variables-green.css" rel="stylesheet"> -->
+  <!-- <link href="assets/css/variables-orange.css" rel="stylesheet"> -->
+  <!-- <link href="assets/css/variables-purple.css" rel="stylesheet"> -->
+  <!-- <link href="assets/css/variables-red.css" rel="stylesheet"> -->
+  <!-- <link href="assets/css/variables-pink.css" rel="stylesheet"> -->
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: HeroBiz
+  * Updated: Jan 29 2024 with Bootstrap v5.3.2
+  * Template URL: https://bootstrapmade.com/herobiz-bootstrap-business-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top" data-scrollto-offset="0">
+    <div class="container-fluid d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center scrollto me-auto me-lg-0">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+       </a>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+
+          <li class=""><a href="index.html#video-background"><span>Home</span> <i class=" "></i></a>
+       
+          </li>
+
+          <li><a class="nav-link scrollto" href="index.html#about">About</a></li>
+          <li><a class="nav-link scrollto" href="index.html#featured-services">Services</a></li>
+          <li><a class="nav-link scrollto" href="index.html#team">Team</a></li>
+          <li><a class="nav-link scrollto" href="index.html#featured-services">Why Us</a></li>
+
+         
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle d-none"></i>
+      </nav><!-- .navbar -->
+
+      <a class="btn-getstarted scrollto" href="login.html">Log In</a>
+
+    </div>
+  </header><!-- End Header -->
+
+  <section id="video-background">
+    <video autoplay muted loop>
+      <source src="Makamin Background - Riyadh Electricity View - Edited.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="content">
+      <h1 class="welcome-message">Welcome to Makamin</h1>
+      <h2 class="welcome-message">Your Guide to a Better Future!</h2>
+    </div>
+  </section>
+  
+
+  <main id="main">
+
+    <!-- ======= Featured Services Section ======= -->
+    <section id="featured-services" class="featured-services">
+      <div class="container">
+        <div class="row gy-4 justify-content-center align-items-center">
+          <!-- First Service Item -->
+          <div class="col d-flex justify-content-center" data-aos="zoom-out" data-aos-delay="600">
+              <div class="service-item position-relative" style="background-color: #F6F6F8; width: 413.33px; height: 241px; padding-bottom: 20px;">
+                  <div class="icon"><i class="bi bi-broadcast icon"></i></div>
+                  <h4><a href="indexv2.html" class="stretched-link">Solar Calculateor </a></h4>
+                  <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
+                  <!-- Read More Button -->
+              </div>
+          </div>
+          <!-- Second Service Item -->
+          <div class="col d-flex justify-content-center" data-aos="zoom-out" data-aos-delay="600">
+              <div class="service-item position-relative" style="background-color: #F6F6F8; width: 413.33px; height: 241px; padding-bottom: 20px;">
+                  <div class="icon"><i class="bi bi-broadcast icon"></i></div>
+                  <h4><a href="indexv3.html" class="stretched-link"> Future Prediction</a></h4>
+                  <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
+                  <!-- Read More Button -->
+              </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Featured Services Section -->
+    
+    <section id="featured-services" class="featured-services">
+      <div class="container">
+    
+        <div class="container">
+
+          <div class="section-header">
+            <h2>Why Makamin </h2>
+            <p>Ea vitae aspernatur deserunt voluptatem impedit deserunt magnam occaecati dssumenda quas ut ad dolores adipisci aliquam.</p>
+          </div>
+  
+        </div>    
+        <div class="row gy-4">
+ 
+
+          <div class="col-xl-3 col-md-6 d-flex" data-aos="zoom-out" data-aos-delay="200">
+            <div class="service-item position-relative">
+              <div class="icon"><i class="bi bi-bounding-box-circles icon"></i></div>
+              <h4><a href="" class="stretched-link">Environmental Impact  </a></h4>
+              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+            </div>
+          </div><!-- End Service Item -->
+          <div class="col-xl-3 col-md-6 d-flex" data-aos="zoom-out" data-aos-delay="200">
+            <div class="service-item position-relative">
+              <div class="icon"><i class="bi bi-bounding-box-circles icon"></i></div>
+              <h4><a href="" class="stretched-link">Cost Saving</a></h4>
+              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+            </div>
+          </div><!-- End Service Item -->
+          <div class="col-xl-3 col-md-6 d-flex" data-aos="zoom-out" data-aos-delay="400">
+            <div class="service-item position-relative">
+              <div class="icon"><i class="bi bi-calendar4-week icon"></i></div>
+              <h4><a href="" class="stretched-link"> Future Prediction</a></h4>
+              <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-xl-3 col-md-6 d-flex" data-aos="zoom-out" data-aos-delay="400">
+            <div class="service-item position-relative">
+              <div class="icon"><i class="bi bi-calendar4-week icon"></i></div>
+              <h4><a href="" class="stretched-link">Magni Dolores</a></h4>
+              <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+            </div>
+          </div><!-- End Service Item -->
+        </div>
+
+      </div>
+    </section><!-- End Featured Services Section -->
+
+    
+
+    <!-- ======= Clients Section ======= -->
+    
+
+    <!-- ======= On Focus Section ======= -->
+    
+
+    <!-- ======= Features Section ======= -->
+    
+    <!-- ======= Services Section ======= -->
+    
+    <!-- ======= Team Section ======= -->
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-header">
+          <h2>About Us</h2>
+          <p>Architecto nobis eos vel nam quidem vitae temporibus voluptates qui hic deserunt iusto omnis nam voluptas asperiores sequi tenetur dolores incidunt enim voluptatem magnam cumque fuga.</p>
+        </div>
+
+        <div class="row g-4 g-lg-5" data-aos="fade-up" data-aos-delay="200">
+
+          <div class="col-lg-5">
+            <div class="about-img">
+              <img src="assets/img/anoutv2.png" class="img-fluid" alt="">
+            </div>
+          </div>
+
+          <div class="col-lg-7">
+            <h3 class="pt-0 pt-lg-5"></h3>
+
+            <!-- Tabs -->
+            <ul class="nav nav-pills mb-3">
+              <li><a class="nav-link active" data-bs-toggle="pill" href="#tab1">
+                Mission 
+              </a></li>
+              <li><a class="nav-link" data-bs-toggle="pill" href="#tab2">Message</a></li>
+             </ul><!-- End Tabs -->
+
+            <!-- Tab Content -->
+            <div class="tab-content">
+
+              <div class="tab-pane fade show active" id="tab1">
+
+ 
+                <div class="d-flex align-items-center mt-4">
+                  <i class="bi bi-check2"></i>
+                  <h4>some text about makamin wewew dvidh difh some text about cegfu makamin website some dj about makamin website some text about makamin </h4>
+                </div>
+                
+              </div><!-- End Tab 1 Content -->
+
+              <div class="tab-pane fade show" id="tab2">
+
+
+                <div class="d-flex align-items-center mt-4">
+                  <i class="bi bi-check2"></i>
+                  <h4>some text about makamin wewew dvidh difh some text about cegfu makamin website some dj about makamin website some text about makamin </h4>
+                </div>
+              </div><!-- End Tab 2 Content -->
+
+              <div class="tab-pane fade show" id="tab3">
+
+                <p class="fst-italic">Consequuntur inventore voluptates consequatur aut vel et. Eos doloribus expedita. Sapiente atque consequatur minima nihil quae aspernatur quo suscipit voluptatem.</p>
+
+                <div class="d-flex align-items-center mt-4">
+                  <i class="bi bi-check2"></i>
+                  <h4>Repudiandae rerum velit modi et officia quasi facilis</h4>
+                </div>
+                <p>Laborum omnis voluptates voluptas qui sit aliquam blanditiis. Sapiente minima commodi dolorum non eveniet magni quaerat nemo et.</p>
+
+                <div class="d-flex align-items-center mt-4">
+                  <i class="bi bi-check2"></i>
+                  <h4>Incidunt non veritatis illum ea ut nisi</h4>
+                </div>
+                <p>Non quod totam minus repellendus autem sint velit. Rerum debitis facere soluta tenetur. Iure molestiae assumenda sunt qui inventore eligendi voluptates nisi at. Dolorem quo tempora. Quia et perferendis.</p>
+
+                <div class="d-flex align-items-center mt-4">
+                  <i class="bi bi-check2"></i>
+                  <h4>Omnis ab quia nemo dignissimos rem eum quos..</h4>
+                </div>
+                <p>Eius alias aut cupiditate. Dolor voluptates animi ut blanditiis quos nam. Magnam officia aut ut alias quo explicabo ullam esse. Sunt magnam et dolorem eaque magnam odit enim quaerat. Vero error error voluptatem eum.</p>
+
+              </div><!-- End Tab 3 Content -->
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+
+  </main><!-- End #main -->
+
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Solar Analysis Tool</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .form-container {
+      background-color: #fff;
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 600px;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    .form-group input[type="text"], .form-group select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+    .form-group button {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      background-color: #007bff;
+      color: white;
+      cursor: pointer;
+    }
+    .form-group button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Your Solar Analysis</h2>
+    <div class="form-group">
+      <label for="averageConsumption">Average Monthly Electricity Consumption (kWh)</label>
+      <input type="text" id="averageConsumption" placeholder="Enter average monthly consumption">
+    </div>
+    <div class="form-group">
+      <label for="zipCode">Zip Code</label>
+      <input type="text" id="zipCode" placeholder="Enter your zip code">
+    </div>
+    <div class="form-group">
+      <button type="button" id="calculateButton">Calculate</button>
+    </div>
+    <div id="results" style="margin-top: 20px;"></div>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const calculateButton = document.getElementById('calculateButton');
+      const resultsDiv = document.getElementById('results');
+    
+      calculateButton.addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent form submission
+    
+        // Inputs
+        const averageConsumption = parseFloat(document.getElementById('averageConsumption').value);
+        // Constants
+        const electricityRate = 0.30; // SAR per kWh, assuming average rate
+        const systemEfficiency = 0.75; // Efficiency including losses
+        const averageSolarIrradiance = 5.75; // kWh/m²/day, assuming for Saudi Arabia
+        const panelWattage = 350; // in watts
+        const panelEfficiency = 0.18; // 18% efficiency
+        const daysPerYear = 365;
+    
+        // Calculations
+        const annualConsumption = averageConsumption * 12;
+        const recommendedSystemSize = (annualConsumption / (averageSolarIrradiance * daysPerYear * systemEfficiency)).toFixed(2);
+        const numberOfPanels = Math.ceil((recommendedSystemSize * 1000) / panelWattage); // System size converted to watts
+        const savingsPercentage = 25; // Assuming 25% savings with solar
+    
+        // Monthly Bill Calculations
+        const monthlyElectricityBill = averageConsumption * electricityRate;
+        const monthlySavings = monthlyElectricityBill * (savingsPercentage / 100);
+        const monthlyBillWithSolar = monthlyElectricityBill - monthlySavings;
+    
+        // Environmental Impact Calculations
+        const annualSolarGeneration = recommendedSystemSize * averageSolarIrradiance * daysPerYear * panelEfficiency;
+        const co2SavingsKgPerYear = annualSolarGeneration * 0.92; // Assuming 0.92 kg CO2 saved per kWh
+        const treesPlantedEquivalent = co2SavingsKgPerYear / 21; // 21 kg CO2 per tree per year
+        const carsOffRoadEquivalent = co2SavingsKgPerYear / 4600; // 4600 kg CO2 per car per year
+    
+        // Display the results
+        resultsDiv.innerHTML = `
+          <p>Recommended Solar System Size: ${recommendedSystemSize} kW</p>
+          <p>Number of Panels Needed: ${numberOfPanels} </p>
+          <p>Savings Cost % from Day 1 with Solar: ${savingsPercentage}%</p>
+          <p>Monthly Electricity Bill Before Solar: ${monthlyElectricityBill.toFixed(2)} SAR</p>
+          <p>Monthly Electricity Bill with Solar: ${monthlyBillWithSolar.toFixed(2)} SAR</p>
+          <p>${treesPlantedEquivalent.toFixed(0)} trees <br>  ${carsOffRoadEquivalent.toFixed(2)} cars off the road </p>
+        `;
+      });
+    });
+  </script>
+  
+<script>
+// Assuming `monthlyBillWithSolar` and `monthlyBillWithoutSolar` arrays are filled with your calculated data
+function generateSavingsChart() {
+    var ctx = document.getElementById('savingsChart').getContext('2d');
+    var chart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+            datasets: [{
+                label: 'Bill with Solar (SAR)',
+                backgroundColor: 'rgb(255, 99, 132)',
+                borderColor: 'rgb(255, 99, 132)',
+                data: monthlyBillWithSolar,
+                fill: false,
+            }, {
+                label: 'Bill without Solar (SAR)',
+                backgroundColor: 'rgb(54, 162, 235)',
+                borderColor: 'rgb(54, 162, 235)',
+                data: monthlyBillWithoutSolar,
+                fill: false,
+            }]
+        },
+        options: {}
+    });
+}
+function generatePDFReport() {
+    let doc = new jspdf.jsPDF();
+
+    // Add text
+    doc.text("Solar Savings Report", 10, 10);
+    doc.text("Recommended System Size: 5 kW", 10, 20);
+    doc.text("Number of Panels Needed: 20", 10, 30);
+    // Add more text for trees planted and cars off the road...
+
+    // To add the chart to the PDF, you'll first need to convert it to an image
+    // This can be complex as it involves rendering the chart off-screen, converting it to an image, then adding it to the PDF
+    // This is a conceptual step; specific implementation can vary and might involve additional libraries or custom code
+
+    // Finalize PDF
+    doc.save('solar-savings-report.pdf');
+}
+
+</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
+  <canvas id="savingsChart" width="400" height="400"></canvas>
+  <script>
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'bar', // The type of chart: bar, line, pie, etc.
+        data: {
+            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'], // These are the category labels.
+            datasets: [{
+                label: '# of Votes',
+                data: [12, 19, 3, 5, 2, 3], // Data or values for each category
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true // This ensures the scale starts at zero.
+                }
+            }
+        }
+    });
+</script>
+
+</body>
+</html>

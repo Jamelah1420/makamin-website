@@ -296,7 +296,7 @@ h6 {
 
 .accordion-flush .accordion-button:not(.collapsed) {
   box-shadow: none;
-  color: #4154f1;
+  color:  #e06623;
 }
 
 .accordion-flush .accordion-body {
@@ -1161,7 +1161,7 @@ h6 {
 }
 
 .contact .php-email-form button[type=submit]:hover {
-  background: #5969f3;
+  background:  #e06623;
 }
 
 @keyframes animate-loading {

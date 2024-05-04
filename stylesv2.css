@@ -48,14 +48,14 @@ body {
 }
 
 .expense-form button {
-    background-color: #5c6bc0;
+    background-color: #e06623;
     color: white;
     cursor: pointer;
 }
 
 /* Button hover effect */
 .expense-form button:hover {
-    background-color: #3f51b5;
+    background-color:#e06623;
 }
 
 /* Header styling */

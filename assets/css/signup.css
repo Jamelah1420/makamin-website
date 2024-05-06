@@ -715,8 +715,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   
     .agileits-top {
       padding: 1.2em;
-      border-radius: 10px;
-
+      
     }
   
     .colorlibcopy-agile {
@@ -726,6 +725,8 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     input[type="text"], input[type="email"], input[type="password"] {
       width: 89.5%;
       font-size: 0.85em;
+      border-radius: 10px;
+
     }
   
     h1 {
@@ -762,4 +763,235 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   }
 
 
-  
+  input[type="text"], input[type="email"], input[type="password"] {
+    font-size: 1em; /* Adjust font size as needed */
+    color: #fff; /* Keep text color white for contrast */
+    font-weight: 400; /* Make font slightly bolder */
+    width: 94.5%; /* Keep the width consistent */
+    display: block;
+    border: 2px solid rgba(255, 255, 255, 0.5); /* Thicker border with semi-transparency */
+    padding: 1.2em; /* Increased padding for better visual space */
+    margin: 1em 0; /* Increased margin for more space between inputs */
+    background: #555; /* Dark background for the inputs */
+    transition: all 0.3s ease-in-out; /* Smooth transition for interactions */
+    border-radius: 10px;
+
+}
+
+/* Enhance focus state to make it clear which input is active */
+input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus {
+    background-color: #666; /* Slightly lighter background on focus */
+    border-color: #fff; /* White border on focus */
+    outline: none; /* Remove default outline */
+    border-radius: 10px;
+
+}
+
+
+
+/* Modify the submit button to match the input field styling */
+input[type="submit"] {
+    font-size: 1em; /* Consistent font size with input fields */
+    color: #fff; /* Text color */
+    background: #FF7426; /* Bright orange background */
+    border: 2px solid #FF7426; /* Solid border with the same color as background */
+    cursor: pointer;
+    padding: 1em; /* Increased padding for a better click area */
+    margin: 2em 0; /* More space above and below the button */
+    transition: background-color 0.3s ease-in-out; /* Smooth transition for hover effect */
+    border-radius: 10px;
+
+}
+
+/* Hover effect for the submit button */
+input[type="submit"]:hover {
+    background-color: #e06515; /* Slightly darker orange on hover */
+    border-radius: 10px;
+
+}
+
+/* Apply Roboto font family globally to ensure consistency */
+body, input, button {
+    font-family: 'Roboto', sans-serif; /* Ensures the entire form uses the Roboto font */
+}
+/* Button styling to match input fields */
+input[type="submit"] {
+    font-size: 1em;
+    color: #fff;
+    background: #FF7426;
+    border: 3px solid #FF7426; /* Matching border thickness */
+    cursor: pointer;
+    padding: 1em;
+    margin: 2em 0;
+    transition: background-color 0.3s ease-in-out;
+    border-radius: 10px;
+
+}
+
+input[type="submit"]:hover {
+    background-color: #e06515;
+}
+
+body {
+    background-color: #e06515; /* Light grey background for the entire page */
+    font-family: 'Roboto', sans-serif;
+}
+h1 {
+    font-size: 3em;  /* Keeps the font size large */
+    text-align: center;  /* Centers the text */
+    color: #fff;  /* Sets the text color to white */
+    font-weight: bold;  /* Makes the text bold */
+    text-transform: capitalize;  /* Capitalizes the first letter of each word */
+    letter-spacing: 4px;  /* Increases spacing between letters for better readability */
+    font-family: 'Roboto', sans-serif;  /* Ensures the Roboto font is used */
+}
+
+ 
+
+
+
+
+
+
+/* Reset some basic elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f7f7f7;
+}
+
+.login-container {
+    width: 350px;
+    padding: 20px;
+    background: #FFF;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.login-header h1 {
+    color: #FF4500;
+    font-weight: 500;
+}
+
+.login-header h2 {
+    color: #333;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+input[type="email"], input[type="password"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+input[type="submit"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: none;
+    background-color: #FF4500;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #E04000;
+}
+
+.login-footer {
+    margin-top: 20px;
+}
+
+.login-footer p {
+    font-size: 14px;
+}
+
+.login-footer a {
+    color: #FF4500;
+    text-decoration: none;
+}
+
+.login-footer a:hover {
+    text-decoration: underline;
+}
+body {
+     background: url('assets/img/cta.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Roboto', sans-serif;
+}
+.login-header h1 {
+    font-size: 3em;
+    color: #333;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2); /* Adds subtle shadow for depth */
+}
+/* Input field general styling */
+.input-group input {
+    width: 100%; /* Full width of its container */
+    padding: 10px 15px; /* Comfortable padding */
+    font-size: 16px; /* Readable text size */
+    font-family: 'Roboto', sans-serif; /* Consistent font family */
+    border: 1px solid #ccc; /* Subtle border */
+    border-radius: 20px; /* Rounded corners */
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1); /* Inner shadow for depth */
+    outline: none; /* Removes the default focus outline */
+    transition: border-color 0.2s; /* Smooth transition for border color */
+}
+
+/* Enhances the focus state by changing border color */
+.input-group input:focus {
+    border-color: #666; /* Darker border on focus */
+}
+
+/* Styling for the email and password inputs to ensure text visibility */
+.input-group input[type="email"],
+.input-group input[type="password"] {
+    background-color: #fff; /* White background */
+    color: #333; /* Dark text for readability */
+}
+
+/* Specific styles for the submit button */
+.input-group input[type="submit"] {
+    background-color: #FF4500; /* Vibrant background color */
+    color: white; /* White text */
+    cursor: pointer; /* Cursor indicates clickable */
+    border: none; /* No border for button */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+/* Hover effect for the submit button */
+.input-group input[type="submit"]:hover {
+    background-color: #E04000; /* Slightly darker shade on hover */
+}
+::-webkit-input-placeholder {
+    color: gray;
+}
+:-moz-placeholder {
+    color: gray;
+}
+::-moz-placeholder {
+    color: gray;
+}
+:-ms-input-placeholder {  
+    color: gray;
+}

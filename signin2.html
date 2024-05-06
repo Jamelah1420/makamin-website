@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login to Your Account</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="{{ url_for('static', filename='img/Makamin_logo2.png') }}" rel="icon">
+
+    <script
+        type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- Custom Theme files -->
+    <link href="{{ url_for('static', filename='css/st.css') }}" rel="stylesheet" type="text/css" media="all">
+    <!-- web font -->
+    <link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
+    <link href="assets/css/signup.css" rel="stylesheet">
+
+    <script>
+        $(document).ready(function () {
+            $('#login-form').submit(function (event) {
+                event.preventDefault(); // Prevent default form submission
+                $.ajax({
+                    type: 'POST',
+                    url: '/login',
+                    data: $(this).serialize(),
+                    success: function (response) {
+                        if (response.success) {
+                            alert('Login Successful! Redirecting...', 'success');
+                            setTimeout(function () {
+                                window.location.href = '/'; // Redirect to homepage after 2 seconds
+                            }, 2000);
+                        } else {
+                            alert(response.message, 'danger'); // Show error message from server
+                        }
+                    },
+                    error: function () {
+                        alert('Login failed! Please try again.', 'danger');
+                    }
+                });
+            });
+    
+            function alert(message, type) {
+                var wrapper = document.createElement('div');
+                wrapper.innerHTML = '<div class="alert alert-' + type + ' alert-dismissible" role="alert">' + message + '</div>';
+    
+                var alertPlaceholder = document.getElementById('liveAlertPlaceholder');
+                alertPlaceholder.append(wrapper);
+    
+                // Set timeout to hide the alert after 3 seconds
+                setTimeout(function () {
+                    $(wrapper).fadeOut('slow', function () {
+                        $(this).remove();
+                    });
+                }, 3000);
+            }
+        });
+    </script>
+    
+</head>
+
+<body>
+    <div class="login-container">
+        <div class="login-header">
+            <h1>Log in</h1>
+         </div>
+        <form id="login-form" action="/login" method="POST" class="login-form">
+            <div class="input-group">
+                <input type="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="input-group">
+                <input type="password" name="password" placeholder="Enter your password" required>
+            </div>
+            <div class="input-group">
+                <input type="submit" value="Sign In">
+            </div>
+        </form>
+        <div class="login-footer">
+            <p>Don't have an account? <a href="/signup">Sign up</a></p>
+        </div>
+    </div>
+</body>
+
+</html>
